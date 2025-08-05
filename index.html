@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TechPro IT Solutions offers expert Cybersecurity, Cloud Engineering, and IT Consulting services to modern businesses." />
+  <meta name="keywords" content="Cybersecurity, Cloud Architecture, IT Consulting, AWS, Azure, TechPro IT Solutions" />
+  <meta name="author" content="TechPro IT Solutions" />
+  <meta property="og:title" content="TechPro IT Solutions" />
+  <meta property="og:description" content="Secure, scale, and modernize with TechPro IT Solutions — your partner in cybersecurity, cloud, and IT strategy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.techproit.solutions" />
+  <meta property="og:image" content="https://www.techproit.solutions/assets/techpro-og-preview.jpg" />
+  <title>TechPro IT Solutions</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Favicons -->
+  <link rel="icon" href="assets/img/favicon_io/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  
+  <!-- External CSS Libraries -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  
+  <!-- Modular CSS Files -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/navigation.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/hero_animations.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TechPro IT Solutions",
+    "url": "https://www.techproit.solutions",
+    "logo": "https://www.techproit.solutions/assets/favicon.ico",
+    "sameAs": [
+      "https://www.linkedin.com/company/techproitsolutions",
+      "https://twitter.com/techproitsolutions"
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "Customer Support",
+      "areaServed": "Worldwide",
+      "availableLanguage": "English"
+    }]
+  }
+  </script>
+  
+  <!-- reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LfWvporAAAAAKzVuRneczHlQ8Fqk9hzsFQz9NX3"></script>
+  <script>
+    grecaptcha.ready(function () {
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          grecaptcha
+            .execute("YOUR_RECAPTCHA_SITE_KEY", { action: "submit" })
+            .then(function (token) {
+              document.getElementById("g-recaptcha-response").value = token;
+              e.target.submit(); // continue submitting after token is added
+            });
+        });
+    });
+  </script>
+
+  <!--
+  Third-party libraries used:
+  - Icons: Feather Icons (https://feathericons.com) - MIT License
+  - Animations: AOS - Animate on Scroll (https://github.com/michalsnik/aos) - MIT License
+  -->
+
+</head>
+<body>
+  <div class="screen-reader-wrapper">
+    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to expertise and contact sections</a>
+  </div>
+
+  <button class="theme-toggle" onclick="toggleTheme()">
+    <span class="theme-icon">🌙</span>
+    <span class="theme-text">Dark</span>
+  </button>
+
+  <div class="nav-container">
+    <nav role="navigation" aria-label="Main navigation">
+      <a href="#services" aria-current="page">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav">
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">
+      &#9776;
+    </button>
+    <div class="drawer" id="mobileDrawer" aria-hidden="true" role="dialog" aria-label="Mobile menu">
+      <button class="close-drawer" onclick="toggleMobileNav()" aria-label="Close menu">&times;</button>
+      <nav role="navigation" aria-label="Mobile navigation">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="floating-elements">
+      <div class="floating-element">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <circle cx="12" cy="12" r="10"/>
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M12 1v6m0 6v6"/>
+          <path d="m21 12-6-6-6 6-6-6"/>
+        </svg>
+      </div>
+      <div class="floating-element">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        </svg>
+      </div>
+      <div class="floating-element">
+        <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+          <polyline points="2,17 12,22 22,17"/>
+          <polyline points="2,12 12,17 22,12"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <h1>TechPro IT Solutions</h1>
+      <p>Secure, Scale, and Modernize Your Business</p>
+      <div class="cta-buttons">
+        <a href="#contact" class="btn btn-primary">
+          <i data-feather="arrow-right" width="20" height="20"></i>
+          Get Started
+        </a>
+        <a href="#services" class="btn btn-secondary">
+          <i data-feather="play" width="20" height="20"></i>
+          Learn More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title" tabindex="-1">Our Expertise</h2>
+          <p class="section-subtitle">We deliver cutting-edge solutions that drive business growth and digital transformation</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-icon">
+              <i data-feather="cloud" width="32" height="32"></i>
+            </div>
+            <h3>Cloud Architecture</h3>
+            <p>Design and implement scalable, secure cloud infrastructure on AWS and Azure. From migration strategy to optimization, we ensure your cloud journey is seamless and cost-effective.</p>
+          </div>
+
+          <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-icon">
+              <i data-feather="shield" width="32" height="32"></i>
+            </div>
+            <h3>Cybersecurity Solutions</h3>
+            <p>Protect your business with comprehensive security strategies including threat detection, vulnerability assessment, compliance management, and incident response.</p>
+          </div>
+
+          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-icon">
+              <i data-feather="trending-up" width="32" height="32"></i>
+            </div>
+            <h3>IT Consulting</h3>
+            <p>Strategic technology guidance, digital transformation roadmaps, and system integration services tailored to accelerate your business objectives.</p>
+          </div>
+        </div>
+
+        <div class="stats-section" data-aos="fade-up" data-aos-delay="400">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <h3>100+</h3>
+              <p>Projects Completed</p>
+            </div>
+            <div class="stat-item">
+              <h3>99.9%</h3>
+              <p>Uptime Guaranteed</p>
+            </div>
+            <div class="stat-item">
+              <h3>24/7</h3>
+              <p>Support Available</p>
+            </div>
+            <div class="stat-item">
+              <h3>50+</h3>
+              <p>Enterprise Clients</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Why Choose TechPro</h2>
+          <p class="section-subtitle">
+            We're a dedicated team of IT professionals committed to helping businesses thrive through secure, scalable infrastructure and innovative solutions. Our expertise spans cloud architecture, cybersecurity, and strategic IT consulting. With over 100 successful projects delivered, we take pride in empowering our clients with reliable, future-proof technology.
+          </p>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;" data-aos="fade-up" data-aos-delay="200">
+          <a class="btn btn-primary" href="#contact">
+            <i data-feather="calendar" width="20" height="20"></i>
+            Schedule Free Consultation
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="founder">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Meet our founder</h2>
+            <div class="founder-highlight">
+              <img alt="Founder of TechPro" src="assets/img/founder.jpeg" />
+            </div>
+          <p class="section-subtitle">
+            Anthony Junk – 15+ years leading digital transformation in cloud and cybersecurity.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-section" data-aos="fade-up">
+          <div class="section-header">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-subtitle">Ready to transform your IT infrastructure? Get in touch with our experts today.</p>
+          </div>
+          
+          <form id="contactForm" class="contact-form" method="POST" action="https://api.web3forms.com/submit">
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" value="83146779-8e55-4ce5-889c-db7d950e4c21"/>
+
+            <!-- reCAPTCHA v3 Token Field -->
+            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response"/>
+
+            <div class="form-group">
+              <input type="text" name="name" class="form-input" placeholder="Your Name" required/>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" class="form-input" placeholder="Your Email" required/>
+            </div>
+            <div class="form-group">
+              <input type="text" name="company" class="form-input" placeholder="Company (Optional)"/>
+            </div>
+            <div class="form-group">
+              <textarea name="message" class="form-input form-textarea" placeholder="Tell us about your project..." required></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit" style="width: 100%;">
+              <i data-feather="send" width="20" height="20"></i>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 TechPro IT Solutions — Your Trusted Technology Partner</p>
+      <p class="credits-line">
+        Icons by <a href="https://feathericons.com" target="_blank" rel="noopener">Feather</a> •
+        Animations by <a href="https://github.com/michalsnik/aos" target="_blank" rel="noopener">AOS</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- External JavaScript Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <!-- Modular JavaScript Files -->
+  <script src="assets/js/theme_navigation.js"></script>
+  <script src="assets/js/animations_effects.js"></script>
+  <script src="assets/js/form_handling.js"></script>
+  <script src="assets/js/main_init.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-// Enhanced Form Submission with Multiple States
+// Enhanced Form Submission with Web3Forms Integration
 function initFormHandler() {
   const contactForm = document.querySelector('.contact-form');
   if (!contactForm) return;
@@ -9,6 +9,16 @@ function initFormHandler() {
     const button = this.querySelector('button[type="submit"]');
     const originalHTML = button.innerHTML;
     const formInputs = this.querySelectorAll('.form-input');
+
+    // Validate form before submission
+    const validation = validateForm(this);
+    if (!validation.isValid) {
+      showFormErrors(validation.errors);
+      return;
+    }
+
+    // Clear any existing errors
+    clearFormErrors();
 
     // Add loading state
     button.classList.add('loading');
@@ -32,21 +42,57 @@ function initFormHandler() {
       input.disabled = true;
     });
 
-    // Simulate form submission (replace with actual form submission logic)
-    setTimeout(() => {
+    // Prepare form data for Web3Forms
+    const formData = new FormData(this);
+
+    // Submit to Web3Forms
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        // Success - show success state
+        button.classList.remove('loading');
+        button.classList.add('success');
+        button.innerHTML = '<i data-feather="check" width="20" height="20"></i> Message Sent!';
+        
+        if (typeof feather !== 'undefined') {
+          feather.replace();
+        }
+
+        // Show success animation
+        button.style.transform = 'scale(1.05)';
+
+        // Wait a moment then redirect to thank you page
+        setTimeout(() => {
+          window.location.href = 'thank-you.html';
+        }, 1500);
+
+      } else {
+        // Error from Web3Forms
+        throw new Error(data.message || 'Submission failed');
+      }
+    })
+    .catch(error => {
+      console.error('Form submission error:', error);
+      
+      // Show error state
       button.classList.remove('loading');
-      button.classList.add('success');
-      button.innerHTML = '<i data-feather="check" width="20" height="20"></i> Message Sent!';
+      button.classList.add('error');
+      button.innerHTML = '<i data-feather="x-circle" width="20" height="20"></i> Failed to Send';
       
       if (typeof feather !== 'undefined') {
         feather.replace();
       }
 
-      // Show success animation
-      button.style.transform = 'scale(1.05)';
+      // Show error message
+      showFormErrors(['Failed to send message. Please try again.']);
 
+      // Reset button after delay
       setTimeout(() => {
-        button.classList.remove('success');
+        button.classList.remove('error');
         button.innerHTML = originalHTML;
         button.disabled = false;
         button.style.transform = '';
@@ -57,15 +103,18 @@ function initFormHandler() {
           input.disabled = false;
         });
 
-        // Reset form with animation
-        resetFormWithAnimation(formInputs);
-
         if (typeof feather !== 'undefined') {
           feather.replace();
         }
-      }, 2500);
-    }, 1500);
+      }, 3000);
+    });
   });
+}
+
+// Clear form errors
+function clearFormErrors() {
+  const existingErrors = document.querySelectorAll('.form-error');
+  existingErrors.forEach(error => error.remove());
 }
 
 // Reset form with staggered animation
@@ -142,8 +191,7 @@ function validateForm(form) {
 // Show form errors
 function showFormErrors(errors) {
   // Remove existing error messages
-  const existingErrors = document.querySelectorAll('.form-error');
-  existingErrors.forEach(error => error.remove());
+  clearFormErrors();
 
   // Add new error messages
   errors.forEach(error => {

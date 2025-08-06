@@ -1,14 +1,10 @@
-// Enhanced Form Submission with Web3Forms Integration
+// Simple Web3Forms Integration - No interference approach
 function initFormHandler() {
   const contactForm = document.querySelector('.contact-form');
   if (!contactForm) return;
 
   contactForm.addEventListener('submit', function(e) {
-    const button = this.querySelector('button[type="submit"]');
-    const originalHTML = button.innerHTML;
-    const formInputs = this.querySelectorAll('.form-input');
-
-    // Validate form before submission
+    // Only prevent default for validation - if valid, let form submit naturally
     const validation = validateForm(this);
     if (!validation.isValid) {
       e.preventDefault();
@@ -18,84 +14,8 @@ function initFormHandler() {
 
     // Clear any existing errors
     clearFormErrors();
-
-    // Add redirect URL to form if not present
-    let redirectInput = this.querySelector('input[name="redirect"]');
-    if (!redirectInput) {
-      redirectInput = document.createElement('input');
-      redirectInput.type = 'hidden';
-      redirectInput.name = 'redirect';
-      redirectInput.value = window.location.origin + '/thank-you.html';
-      this.appendChild(redirectInput);
-    }
-
-    // Add loading state
-    button.classList.add('loading');
-    button.innerHTML = '<i data-feather="loader" width="20" height="20"></i> Sending...';
-    button.disabled = true;
-
-    // Replace feather icons
-    if (typeof feather !== 'undefined') {
-      feather.replace();
-    }
-
-    // Add spinning animation
-    const loader = button.querySelector('[data-feather="loader"]');
-    if (loader) {
-      loader.style.animation = 'spin 1s linear infinite';
-    }
-
-    // Disable form inputs
-    formInputs.forEach(input => {
-      input.style.opacity = '0.6';
-      input.disabled = true;
-    });
-
-    // Show success message briefly before form submits
-    setTimeout(() => {
-      button.classList.remove('loading');
-      button.classList.add('success');
-      button.innerHTML = '<i data-feather="check" width="20" height="20"></i> Sending...';
-      
-      if (typeof feather !== 'undefined') {
-        feather.replace();
-      }
-
-      // Let the form submit naturally after showing success state
-      // Web3Forms will handle the redirect to thank-you page
-    }, 800);
-
-    // Don't prevent default - let the form submit naturally
-    // Web3Forms will redirect to thank-you page automatically
-  });
-}
-
-// Alternative approach: Pure Web3Forms with custom success page
-function initSimpleFormHandler() {
-  const contactForm = document.querySelector('.contact-form');
-  if (!contactForm) return;
-
-  // Add redirect URL to form
-  let redirectInput = contactForm.querySelector('input[name="redirect"]');
-  if (!redirectInput) {
-    redirectInput = document.createElement('input');
-    redirectInput.type = 'hidden';
-    redirectInput.name = 'redirect';
-    redirectInput.value = window.location.origin + '/thank-you.html';
-    contactForm.appendChild(redirectInput);
-  }
-
-  contactForm.addEventListener('submit', function(e) {
-    const validation = validateForm(this);
-    if (!validation.isValid) {
-      e.preventDefault();
-      showFormErrors(validation.errors);
-      return;
-    }
-
-    clearFormErrors();
     
-    // Add a brief loading state
+    // Add simple loading state
     const button = this.querySelector('button[type="submit"]');
     button.innerHTML = '<i data-feather="loader" width="20" height="20"></i> Sending...';
     button.disabled = true;
@@ -104,7 +24,8 @@ function initSimpleFormHandler() {
       feather.replace();
     }
 
-    // Form will submit naturally and Web3Forms will redirect
+    // Let the form submit naturally to Web3Forms
+    // Web3Forms will handle the redirect automatically
   });
 }
 

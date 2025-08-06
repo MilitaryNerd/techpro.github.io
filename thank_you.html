@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Thank you for contacting TechPro IT Solutions. We'll be in touch soon!" />
+  <meta name="robots" content="noindex" />
+  <title>Thank You | TechPro IT Solutions</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  
+  <!-- External CSS Libraries -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  
+  <!-- Modular CSS Files -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/navigation.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/hero_animations.css">
+  <link rel="stylesheet" href="assets/css/ancillary.css">
+</head>
+<body>
+  <!-- 
+  Third-party libraries used:
+  - Icons: Feather Icons (https://feathericons.com) - MIT License
+  - Animations: AOS - Animate on Scroll (https://github.com/michalsnik/aos) - MIT License
+  -->
+  
+  <div class="screen-reader-wrapper">
+    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
+  </div>
+
+  <button class="theme-toggle" onclick="toggleTheme()">
+    <span class="theme-icon">🌙</span>
+    <span class="theme-text">Dark</span>
+  </button>
+
+  <div class="nav-container">
+    <nav role="navigation" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/#services">Services</a>
+      <a href="/#about">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav">
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">
+      &#9776;
+    </button>
+    <div class="drawer" id="mobileDrawer" aria-hidden="true" role="dialog" aria-label="Mobile menu">
+      <button class="close-drawer" onclick="toggleMobileNav()" aria-label="Close menu">&times;</button>
+      <nav role="navigation" aria-label="Mobile navigation">
+        <a href="/">Home</a>
+        <a href="/#services">Services</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <section class="hero success-hero">
+      <div class="floating-elements">
+        <div class="floating-element">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22,4 12,14.01 9,11.01"/>
+          </svg>
+        </div>
+        <div class="floating-element">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div class="floating-element">
+          <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M9 11H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-4"/>
+            <polyline points="9,11 12,14 15,11"/>
+            <path d="M12 14V3"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="hero-content success-content">
+        <div class="success-icon" data-aos="zoom-in">
+          <i data-feather="check-circle" width="120" height="120"></i>
+        </div>
+        <h1 data-aos="fade-up" data-aos-delay="200">Message Sent!</h1>
+        <h2 data-aos="fade-up" data-aos-delay="300">Thank You for Reaching Out</h2>
+        <p data-aos="fade-up" data-aos-delay="400">
+          We've received your message and our team of IT experts will review it carefully. 
+          You can expect to hear back from us within 24 hours during business days.
+        </p>
+        
+        <!-- What happens next section -->
+        <div class="next-steps" data-aos="fade-up" data-aos-delay="500">
+          <h3>What happens next?</h3>
+          <div class="steps-grid glass">
+            <div class="step-item" data-aos="fade-up" data-aos-delay="600">
+              <div class="step-icon">
+                <i data-feather="clock" width="32" height="32"></i>
+              </div>
+              <h4>Within 24 Hours</h4>
+              <p>Our team will review your inquiry and prepare a tailored response</p>
+            </div>
+            <div class="step-item" data-aos="fade-up" data-aos-delay="700">
+              <div class="step-icon">
+                <i data-feather="phone" width="32" height="32"></i>
+              </div>
+              <h4>Personal Contact</h4>
+              <p>We'll reach out via your preferred method to discuss your needs</p>
+            </div>
+            <div class="step-item" data-aos="fade-up" data-aos-delay="800">
+              <div class="step-icon">
+                <i data-feather="trending-up" width="32" height="32"></i>
+              </div>
+              <h4>Custom Solution</h4>
+              <p>Together, we'll craft the perfect IT strategy for your business</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-buttons" data-aos="fade-up" data-aos-delay="900">
+          <a href="/" class="btn btn-primary">
+            <i data-feather="home" width="20" height="20"></i>
+            Back to Home
+          </a>
+          <a href="/#services" class="btn btn-secondary">
+            <i data-feather="eye" width="20" height="20"></i>
+            Explore Services
+          </a>
+        </div>
+        
+        <!-- Urgency contact info -->
+        <div class="urgent-contact" data-aos="fade-up" data-aos-delay="1000">
+          <p>
+            <strong>Need immediate assistance?</strong><br>
+            For urgent IT emergencies, call us directly at 
+            <a href="tel:+1-555-TECHPRO" class="phone-link">(555) TECH-PRO</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Optional: Related content section -->
+    <section class="section related-content">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">While You Wait</h2>
+          <p class="section-subtitle">Explore what makes TechPro IT Solutions your ideal technology partner</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-icon">
+              <i data-feather="shield" width="32" height="32"></i>
+            </div>
+            <h3>Enterprise Security</h3>
+            <p>Protect your business with comprehensive cybersecurity solutions designed for modern threats.</p>
+            <a href="/#services" class="learn-more-link">
+              Learn More <i data-feather="arrow-right" width="16" height="16"></i>
+            </a>
+          </div>
+
+          <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-icon">
+              <i data-feather="cloud" width="32" height="32"></i>
+            </div>
+            <h3>Cloud Migration</h3>
+            <p>Seamlessly transition to scalable cloud infrastructure with zero downtime and maximum efficiency.</p>
+            <a href="/#services" class="learn-more-link">
+              Learn More <i data-feather="arrow-right" width="16" height="16"></i>
+            </a>
+          </div>
+
+          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-icon">
+              <i data-feather="users" width="32" height="32"></i>
+            </div>
+            <h3>24/7 Support</h3>
+            <p>Round-the-clock monitoring and support to keep your systems running smoothly.</p>
+            <a href="/#services" class="learn-more-link">
+              Learn More <i data-feather="arrow-right" width="16" height="16"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 TechPro IT Solutions — Your Trusted Technology Partner</p>
+      <p class="credits-line">
+        Icons by <a href="https://feathericons.com" target="_blank" rel="noopener">Feather</a> • 
+        Animations by <a href="https://github.com/michalsnik/aos" target="_blank" rel="noopener">AOS</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- External JavaScript Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <!-- Modular JavaScript Files -->
+  <script src="assets/js/theme_navigation.js"></script>
+  <script src="assets/js/animations_effects.js"></script>
+  <script src="assets/js/form_handling.js"></script>
+  <script src="assets/js/main_init.js"></script>
+
+  <!-- Thank you page specific functionality -->
+  <script>
+    // Track form submission success (optional analytics)
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'form_submit', {
+        event_category: 'Contact',
+        event_label: 'Contact Form Success',
+        value: 1
+      });
+    }
+
+    // Add celebratory animation on load
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const successIcon = document.querySelector('.success-icon svg');
+        if (successIcon) {
+          successIcon.style.animation = 'pulse 2s ease-in-out 3';
+        }
+      }, 1000);
+    });
+
+    // Optional: Auto-redirect after extended time (uncomment if desired)
+    // setTimeout(() => {
+    //   window.location.href = '/';
+    // }, 30000); // Redirect to home after 30 seconds
+  </script>
+</body>
+</html>

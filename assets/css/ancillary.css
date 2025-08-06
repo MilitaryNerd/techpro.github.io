@@ -1,0 +1,251 @@
+/* Error Pages CSS Module */
+/* Extends the existing modular CSS system for 404 and thank-you pages */
+
+/* Base error page styling */
+.error-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Uses your existing gradient instead of green */
+  background: var(--gradient-primary);
+  /* Add padding to account for fixed navigation */
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* Ensure no white space shows on 404 page */
+body:has(.error-hero) {
+  background: var(--gradient-primary);
+}
+
+/* Fallback for browsers without :has() support */
+.error-hero ~ * {
+  background: transparent;
+}
+
+.error-hero + main {
+  background: transparent;
+}
+
+.error-content h1 {
+  font-size: clamp(6rem, 15vw, 12rem);
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  /* Warning colors using your existing color system */
+  background: linear-gradient(135deg, var(--warning) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.error-content h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.error-icon {
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.error-icon svg {
+  color: var(--warning);
+  filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.3));
+}
+
+/* Success page styling */
+.success-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Uses your brand gradient with success accent */
+  background: linear-gradient(135deg, var(--success) 0%, var(--primary) 100%);
+  /* Add padding to account for fixed navigation */
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+}
+
+.success-content h1 {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: white;
+  line-height: 1.3;
+  /* Add padding to prevent descender cutoff */
+  padding-bottom: 0.2rem;
+}
+
+.success-content h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: white;
+  opacity: 0.9;
+}
+
+.success-icon {
+  margin-bottom: 2rem;
+  /* Add top margin to push icon below navigation */
+  margin-top: 2rem;
+}
+
+.success-icon svg {
+  color: white;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+  animation: checkmarkDraw 1s ease-out 0.5s both;
+}
+
+/* Shared helpful content styling */
+.helpful-links {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.helpful-links h3 {
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.quick-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.quick-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.quick-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Next steps section */
+.next-steps {
+  margin: 3rem 0;
+  text-align: center;
+  /* Allow section to be wider than hero-content container */
+  width: calc(100vw - 4rem);
+  max-width: 1200px;
+  margin-left: calc(-50vw + 50% + 2rem);
+}
+
+.next-steps h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* Urgent contact styling */
+.urgent-contact {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.urgent-contact:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.urgent-contact p {
+  color: white;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.phone-link {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.phone-link:hover {
+  border-bottom-color: white;
+  color: var(--accent);
+}
+
+/* Learn more links in related content */
+.learn-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.learn-more-link:hover {
+  color: var(--primary-dark);
+  transform: translateX(5px);
+}
+
+/* Success icon animation */
+@keyframes checkmarkDraw {
+  0% {
+    transform: scale(0) rotate(-45deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(-22.5deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 767px) {
+  .quick-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .quick-link {
+    width: 200px;
+    justify-content: center;
+  }
+
+  .urgent-contact {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  .urgent-contact p {
+    font-size: 0.9rem;
+  }
+}

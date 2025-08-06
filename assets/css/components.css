@@ -82,7 +82,7 @@
   border-color: rgba(255, 255, 255, 0.8);
 }
 
-/* Loading state */
+/* Loading and success states */
 .btn.loading {
   pointer-events: none;
   opacity: 0.8;
@@ -90,6 +90,11 @@
 
 .btn.success {
   background: var(--success) !important;
+  color: white !important;
+}
+
+.btn.error {
+  background: var(--warning) !important;
   color: white !important;
 }
 
@@ -215,7 +220,7 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-
+  
   .step-item {
     padding: 1.5rem 1rem;
   }
@@ -228,13 +233,13 @@
     justify-content: center;
     gap: 2rem;
   }
-
+  
   .step-item {
     flex: 0 0 calc(50% - 1rem);
     max-width: 400px;
     min-width: 280px;
   }
-
+  
   .step-item:nth-child(3):last-child {
     flex: 0 0 calc(50% - 1rem);
     margin: 0 auto;
@@ -248,7 +253,7 @@
     justify-content: center;
     gap: 2rem;
   }
-
+  
   .step-item {
     flex: 0 0 350px;
     max-width: 400px;
@@ -266,7 +271,7 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-
+  
   .step-item {
     /* Maintain the same size as medium screens */
     flex: 0 0 350px;
@@ -291,14 +296,14 @@
     justify-content: center;
     gap: 2rem;
   }
-
+  
   .service-card {
     /* Ensure cards have consistent width */
     flex: 0 0 calc(50% - 1rem);
     max-width: 400px;
     min-width: 280px;
   }
-
+  
   /* When there are 3 cards, center the last one */
   .service-card:nth-child(3):last-child {
     flex: 0 0 calc(50% - 1rem);
@@ -314,7 +319,7 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-
+  
   /* Steps grid gets different treatment for large screens */
   .steps-grid {
     /* Use flexbox instead of grid to maintain card proportions */
@@ -325,7 +330,7 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-
+  
   .steps-grid .step-item {
     /* Maintain the same size as medium screens */
     flex: 0 0 350px;
@@ -567,27 +572,27 @@
     flex-direction: column;
     align-items: center;
   }
-
+  
   .services-grid {
     /* Single column on mobile */
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-
+  
   .service-card {
     padding: 2rem 1.5rem;
     /* Reset any flex properties */
     flex: none;
   }
-
+  
   .stats-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
     text-align: center;
   }
-
+  
   .contact-section,
   .stats-section {
     padding: 2rem 1rem;

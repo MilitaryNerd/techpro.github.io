@@ -93,11 +93,245 @@
   color: white !important;
 }
 
-/* Enhanced Services Grid */
+/* Reusable Steps Grid Component */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  /* Center the grid items when there's an odd number */
+  justify-items: center;
+}
+
+.step-item {
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  /* Ensure consistent width like service cards */
+  width: 100%;
+  max-width: 400px;
+}
+
+.step-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.step-item:hover .step-icon {
+  transform: scale(1.1);
+}
+
+.step-item h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.step-item p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Theme Variants for Steps */
+
+/* Glass theme (for overlay/hero sections) */
+.steps-grid.glass .step-item {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+}
+
+.steps-grid.glass .step-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.steps-grid.glass .step-icon {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.steps-grid.glass .step-item:hover .step-icon {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.steps-grid.glass .step-icon svg {
+  color: white;
+}
+
+.steps-grid.glass .step-item h4 {
+  color: white;
+}
+
+.steps-grid.glass .step-item p {
+  color: white;
+  opacity: 0.9;
+}
+
+/* Surface theme (for regular page sections) */
+.steps-grid.surface .step-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.steps-grid.surface .step-item:hover {
+  border-color: var(--primary);
+}
+
+.steps-grid.surface .step-icon {
+  background: var(--gradient-primary);
+}
+
+.steps-grid.surface .step-icon svg {
+  color: white;
+}
+
+.steps-grid.surface .step-item h4 {
+  color: var(--text-primary);
+}
+
+.steps-grid.surface .step-item:hover h4 {
+  color: var(--primary);
+}
+
+.steps-grid.surface .step-item p {
+  color: var(--text-secondary);
+}
+
+/* Responsive Steps Grid - Clean and Simple */
+@media (max-width: 767px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .step-item {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .steps-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .step-item {
+    flex: 0 0 calc(50% - 1rem);
+    max-width: 400px;
+    min-width: 280px;
+  }
+
+  .step-item:nth-child(3):last-child {
+    flex: 0 0 calc(50% - 1rem);
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .steps-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .step-item {
+    flex: 0 0 350px;
+    max-width: 400px;
+    min-width: 320px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .steps-grid {
+    /* Use flexbox instead of grid to maintain card proportions */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .step-item {
+    /* Maintain the same size as medium screens */
+    flex: 0 0 350px;
+    max-width: 400px;
+    min-width: 320px;
+  }
+}
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  /* Center the grid items when there's an odd number */
+  justify-items: center;
+}
+
+/* Special handling for 3 cards on medium screens */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .services-grid {
+    /* Use flexbox for better centering control on medium screens */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .service-card {
+    /* Ensure cards have consistent width */
+    flex: 0 0 calc(50% - 1rem);
+    max-width: 400px;
+    min-width: 280px;
+  }
+
+  /* When there are 3 cards, center the last one */
+  .service-card:nth-child(3):last-child {
+    flex: 0 0 calc(50% - 1rem);
+    margin: 0 auto;
+  }
+}
+
+/* For large screens, go back to grid for perfect alignment */
+@media (min-width: 1200px) {
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Steps grid gets different treatment for large screens */
+  .steps-grid {
+    /* Use flexbox instead of grid to maintain card proportions */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .steps-grid .step-item {
+    /* Maintain the same size as medium screens */
+    flex: 0 0 350px;
+    max-width: 400px;
+    min-width: 320px;
+  }
 }
 
 .service-card {
@@ -328,28 +562,32 @@
 }
 
 /* Responsive Design for Components */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .cta-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .services-grid {
+    /* Single column on mobile */
+    display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .service-card {
     padding: 2rem 1.5rem;
+    /* Reset any flex properties */
+    flex: none;
   }
-  
+
   .stats-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
     text-align: center;
   }
-  
+
   .contact-section,
   .stats-section {
     padding: 2rem 1rem;

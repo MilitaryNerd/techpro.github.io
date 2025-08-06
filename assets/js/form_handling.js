@@ -4,8 +4,6 @@ function initFormHandler() {
   if (!contactForm) return;
 
   contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-
     const button = this.querySelector('button[type="submit"]');
     const originalHTML = button.innerHTML;
     const formInputs = this.querySelectorAll('.form-input');
@@ -13,12 +11,23 @@ function initFormHandler() {
     // Validate form before submission
     const validation = validateForm(this);
     if (!validation.isValid) {
+      e.preventDefault();
       showFormErrors(validation.errors);
       return;
     }
 
     // Clear any existing errors
     clearFormErrors();
+
+    // Add redirect URL to form if not present
+    let redirectInput = this.querySelector('input[name="redirect"]');
+    if (!redirectInput) {
+      redirectInput = document.createElement('input');
+      redirectInput.type = 'hidden';
+      redirectInput.name = 'redirect';
+      redirectInput.value = window.location.origin + '/thank-you.html';
+      this.appendChild(redirectInput);
+    }
 
     // Add loading state
     button.classList.add('loading');
@@ -42,94 +51,60 @@ function initFormHandler() {
       input.disabled = true;
     });
 
-    // Prepare form data for Web3Forms
-    const formData = new FormData(this);
-    
-    // Debug: Log what we're sending
-    console.log('Submitting form data:');
-    for (let [key, value] of formData.entries()) {
-      console.log(key + ': ' + value);
-    }
-
-    // Submit to Web3Forms
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: formData
-    })
-    .then(async response => {
-      const data = await response.json();
-      console.log('Web3Forms response:', data);
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      
-      return data;
-    })
-    .then(data => {
-      console.log('Form submission result:', data);
-      
-      if (data.success) {
-        // Success - show success state
-        button.classList.remove('loading');
-        button.classList.add('success');
-        button.innerHTML = '<i data-feather="check" width="20" height="20"></i> Message Sent!';
-        
-        if (typeof feather !== 'undefined') {
-          feather.replace();
-        }
-
-        // Show success animation
-        button.style.transform = 'scale(1.05)';
-
-        // Track successful submission
-        console.log('Form submitted successfully, redirecting...');
-
-        // Wait a moment then redirect to thank you page
-        setTimeout(() => {
-          console.log('Redirecting to thank-you.html');
-          window.location.href = 'thank-you.html';
-        }, 1500);
-
-      } else {
-        // Error from Web3Forms
-        console.error('Web3Forms returned error:', data);
-        throw new Error(data.message || 'Submission failed');
-      }
-    })
-    .catch(error => {
-      console.error('Form submission error:', error);
-      
-      // Show error state
+    // Show success message briefly before form submits
+    setTimeout(() => {
       button.classList.remove('loading');
-      button.classList.add('error');
-      button.innerHTML = '<i data-feather="x-circle" width="20" height="20"></i> Failed to Send';
+      button.classList.add('success');
+      button.innerHTML = '<i data-feather="check" width="20" height="20"></i> Sending...';
       
       if (typeof feather !== 'undefined') {
         feather.replace();
       }
 
-      // Show error message
-      showFormErrors([`Failed to send message: ${error.message}. Please try again.`]);
+      // Let the form submit naturally after showing success state
+      // Web3Forms will handle the redirect to thank-you page
+    }, 800);
 
-      // Reset button after delay
-      setTimeout(() => {
-        button.classList.remove('error');
-        button.innerHTML = originalHTML;
-        button.disabled = false;
-        button.style.transform = '';
+    // Don't prevent default - let the form submit naturally
+    // Web3Forms will redirect to thank-you page automatically
+  });
+}
 
-        // Re-enable form inputs
-        formInputs.forEach(input => {
-          input.style.opacity = '';
-          input.disabled = false;
-        });
+// Alternative approach: Pure Web3Forms with custom success page
+function initSimpleFormHandler() {
+  const contactForm = document.querySelector('.contact-form');
+  if (!contactForm) return;
 
-        if (typeof feather !== 'undefined') {
-          feather.replace();
-        }
-      }, 4000);
-    });
+  // Add redirect URL to form
+  let redirectInput = contactForm.querySelector('input[name="redirect"]');
+  if (!redirectInput) {
+    redirectInput = document.createElement('input');
+    redirectInput.type = 'hidden';
+    redirectInput.name = 'redirect';
+    redirectInput.value = window.location.origin + '/thank-you.html';
+    contactForm.appendChild(redirectInput);
+  }
+
+  contactForm.addEventListener('submit', function(e) {
+    const validation = validateForm(this);
+    if (!validation.isValid) {
+      e.preventDefault();
+      showFormErrors(validation.errors);
+      return;
+    }
+
+    clearFormErrors();
+    
+    // Add a brief loading state
+    const button = this.querySelector('button[type="submit"]');
+    button.innerHTML = '<i data-feather="loader" width="20" height="20"></i> Sending...';
+    button.disabled = true;
+    
+    if (typeof feather !== 'undefined') {
+      feather.replace();
+    }
+
+    // Form will submit naturally and Web3Forms will redirect
   });
 }
 
@@ -137,19 +112,6 @@ function initFormHandler() {
 function clearFormErrors() {
   const existingErrors = document.querySelectorAll('.form-error');
   existingErrors.forEach(error => error.remove());
-}
-
-// Reset form with staggered animation
-function resetFormWithAnimation(formInputs) {
-  formInputs.forEach((input, index) => {
-    setTimeout(() => {
-      input.value = '';
-      input.style.animation = 'fadeInUp 0.3s ease-out';
-      setTimeout(() => {
-        input.style.animation = '';
-      }, 300);
-    }, index * 100);
-  });
 }
 
 // Form input focus effects
@@ -212,10 +174,8 @@ function validateForm(form) {
 
 // Show form errors
 function showFormErrors(errors) {
-  // Remove existing error messages
   clearFormErrors();
 
-  // Add new error messages
   errors.forEach(error => {
     const errorElement = document.createElement('div');
     errorElement.className = 'form-error';

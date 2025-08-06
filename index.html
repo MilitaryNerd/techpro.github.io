@@ -54,6 +54,24 @@
     }]
   }
   </script>
+  
+  <!-- reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LfWvporAAAAAKzVuRneczHlQ8Fqk9hzsFQz9NX3"></script>
+  <script>
+    grecaptcha.ready(function () {
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          grecaptcha
+            .execute("YOUR_RECAPTCHA_SITE_KEY", { action: "submit" })
+            .then(function (token) {
+              document.getElementById("g-recaptcha-response").value = token;
+              e.target.submit(); // continue submitting after token is added
+            });
+        });
+    });
+  </script>
 
   <!--
   Third-party libraries used:
@@ -236,14 +254,9 @@
             <!-- Web3Forms Access Key -->
             <input type="hidden" name="access_key" value="83146779-8e55-4ce5-889c-db7d950e4c21"/>
 
-            <!-- Optional fields -->
-            <input type="hidden" name="subject" value="Feedback submission" />
-            <input type="hidden" name="redirect" value="https://techproit.solutions/thank-you.html" />
-            
-            <!-- Bot honeypot field -->
-            <input type="checkbox" name="botcheck" sytle="display: none;"/>
+            <!-- reCAPTCHA v3 Token Field -->
+            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response"/>
 
-            <!-- User fields -->
             <div class="form-group">
               <input type="text" name="name" class="form-input" placeholder="Your Name" required/>
             </div>

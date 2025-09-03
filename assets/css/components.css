@@ -319,7 +319,7 @@
   
   /* Center the 4th card when it's alone on the second row */
   .service-card:nth-child(4) {
-    grid-column: 2;
+    grid-column: 2; /* Force deployment refresh */
   }
   
   /* Steps grid gets different treatment for large screens */

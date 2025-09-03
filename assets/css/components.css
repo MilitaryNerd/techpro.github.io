@@ -252,28 +252,11 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-  }
-  
-  .step-item {
-    flex: 0 0 350px;
-    max-width: 400px;
-    min-width: 320px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .steps-grid {
-    /* Use flexbox instead of grid to maintain card proportions */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
   }
   
-  .step-item {
-    /* Maintain the same size as medium screens */
+  .steps-grid .step-item {
     flex: 0 0 350px;
     max-width: 400px;
     min-width: 320px;

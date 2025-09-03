@@ -304,11 +304,8 @@
     min-width: 280px;
   }
   
-  /* When there are 3 cards, center the last one */
-  .service-card:nth-child(3):last-child {
-    flex: 0 0 calc(50% - 1rem);
-    margin: 0 auto;
-  }
+  /* Center any lone card on the last row by using justify-content: center on the container */
+  /* This automatically centers any remaining items */
 }
 
 /* For large screens, go back to grid for perfect alignment */
@@ -318,6 +315,11 @@
     grid-template-columns: repeat(3, 1fr);
     max-width: 1200px;
     margin: 0 auto;
+  }
+  
+  /* Center the 4th card when it's alone on the second row */
+  .service-card:nth-child(4) {
+    grid-column: 2;
   }
   
   /* Steps grid gets different treatment for large screens */

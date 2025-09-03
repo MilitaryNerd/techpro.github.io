@@ -304,8 +304,11 @@
     min-width: 280px;
   }
   
-  /* Center any lone card on the last row by using justify-content: center on the container */
-  /* This automatically centers any remaining items */
+  /* When there are 3 cards, center the last one */
+  .service-card:nth-child(3):last-child {
+    flex: 0 0 calc(50% - 1rem);
+    margin: 0 auto;
+  }
 }
 
 /* For large screens, go back to grid for perfect alignment */

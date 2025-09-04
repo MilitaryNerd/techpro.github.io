@@ -144,12 +144,10 @@ body:has(.error-hero) {
 
 /* Next steps section */
 .next-steps {
-  margin: 3rem 0;
+  margin: 3rem auto;
   text-align: center;
-  /* Allow section to be wider than hero-content container */
-  width: calc(100vw - 4rem);
   max-width: 1200px;
-  margin-left: calc(-50vw + 50% + 2rem);
+  width: 100%;
 }
 
 .next-steps h3 {

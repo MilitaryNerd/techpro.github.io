@@ -73,6 +73,20 @@
 }
 
 /* Theme-specific secondary button colors */
+[data-theme="light"] .btn-secondary,
+.hero [data-theme="light"] .btn-secondary {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: white;
+}
+
+[data-theme="light"] .btn-secondary:hover,
+.hero [data-theme="light"] .btn-secondary:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
 [data-theme="dark"] .btn-secondary {
   border-color: rgba(255, 255, 255, 0.4);
 }
@@ -302,10 +316,38 @@
     margin: 0 auto;
   }
   
-  /* Center the 4th service card when it's alone on the second row */
-  .service-card:nth-child(4) {
+  /* Center the 4th service card when it's alone on the second row (for 4-card layouts) */
+  .service-card:nth-child(4):last-child {
     grid-column: 2;
   }
+  
+  /* Special handling for 8-card layout using grid with proper centering */
+  .services-grid-8 {
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* First 6 cards span 2 columns each (3 cards per row) */
+  .services-grid-8 .service-card:nth-child(-n+6) {
+    grid-column: span 2;
+  }
+  
+  /* Last 2 cards centered - each spans 2 columns with 1 column gap on each side */
+  .services-grid-8 .service-card:nth-child(7) {
+    grid-column: 2 / 4;
+  }
+  
+  .services-grid-8 .service-card:nth-child(8) {
+    grid-column: 4 / 6;
+  }
+}
+
+/* Reduce padding between consecutive sections */
+.section + .section {
+  padding-top: 4rem;
 }
 
 .service-card {
@@ -318,6 +360,33 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Ensure links inside service cards are clickable */
+.service-card a {
+  position: relative;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+/* NEW ribbon for service cards */
+.new-ribbon {
+  position: absolute;
+  top: 15px;
+  right: -35px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  color: white;
+  padding: 8px 45px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transform: rotate(45deg);
+  transform-origin: center;
+  box-shadow: 0 2px 8px rgba(238, 90, 82, 0.3);
+  z-index: 10;
 }
 
 .service-card::before {
@@ -412,6 +481,24 @@
   color: var(--text-secondary);
   line-height: 1.7;
   font-size: 1rem;
+}
+
+.service-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card-main {
+  flex: 1;
+}
+
+.service-tagline {
+  margin-top: auto;
+  margin-bottom: 0 !important;
+  font-size: 0.9rem !important;
+  opacity: 0.8;
+  padding-top: 1rem;
 }
 
 /* Enhanced Stats Section */

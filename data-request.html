@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Data Subject Access Request Form for TechPro Solutions LLC - Submit requests for data access, deletion, correction, or other privacy rights under GDPR, CCPA, and other privacy laws." />
+  <meta name="keywords" content="Data Subject Access Request, GDPR, CCPA, Privacy Rights, Data Protection, TechPro Solutions" />
+  <meta name="author" content="TechPro Solutions LLC" />
+  <meta property="og:title" content="Data Subject Access Request - TechPro Solutions LLC" />
+  <meta property="og:description" content="Submit a formal request to exercise your privacy rights regarding your personal data." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://techproit.solutions/data-request.html" />
+  <title>Data Subject Access Request - TechPro Solutions LLC</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/img/favicon_io/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="/assets/img/favicon_io/site.webmanifest">
+  
+  <!-- External CSS Libraries -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  
+  <!-- Modular CSS Files -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/navigation.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/hero_animations.css">
+</head>
+<body>
+
+  <div class="screen-reader-wrapper">
+    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to data request form</a>
+  </div>
+
+  <button class="theme-toggle" onclick="toggleTheme()">
+    <span class="theme-icon">🌙</span>
+    <span class="theme-text">Dark</span>
+  </button>
+
+  <div class="nav-container">
+    <nav role="navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav">
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">
+      &#9776;
+    </button>
+    <div class="drawer" id="mobileDrawer" aria-hidden="true" role="dialog" aria-label="Mobile menu">
+      <button class="close-drawer" onclick="toggleMobileNav()" aria-label="Close menu">&times;</button>
+      <nav role="navigation" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+    </div>
+  </div>
+
+  <section class="hero" style="padding: 6rem 2rem 4rem; min-height: auto;">
+    <div class="hero-content" style="text-align: center;">
+      <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem;">Data Subject Access Request</h1>
+      <p style="font-size: 1.125rem; color: rgba(255, 255, 255, 0.9);">Exercise your privacy rights</p>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <section class="section" style="padding: 4rem 2rem;">
+      <div class="container">
+        <div class="contact-section" style="max-width: 700px; margin: 0 auto;">
+          <div class="privacy-content" style="position: relative; z-index: 2;">
+            <h2 style="font-size: 1.75rem; font-weight: 600; margin-bottom: 1rem; color: var(--primary);">Data Subject Access Request Form</h2>
+            
+            <p style="margin-bottom: 2rem; color: var(--text-secondary); line-height: 1.7;">Please fill in the information below. The website administrator or data protection officer will be notified of your request within 24 hours, and will need an appropriate amount of time to respond.</p>
+            
+            <form id="dataRequestForm" class="contact-form" method="POST" action="https://api.web3forms.com/submit">
+              <!-- Web3Forms Access Key -->
+              <input type="hidden" name="access_key" value="83146779-8e55-4ce5-889c-db7d950e4c21" />
+
+              <!-- Web3Forms Configuration -->
+              <input type="hidden" name="subject" value="Data Subject Access Request - TechPro Solutions" />
+              <input type="hidden" name="from_name" value="TechPro Solutions Data Request Form" />
+              <input type="hidden" name="redirect" value="https://techproit.solutions/thank_you.html" />
+
+              <!-- Bot honeypot field -->
+              <input type="checkbox" name="honeypot" style="display: none;" />
+
+              <div class="form-group">
+                <label for="website" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-primary);">Website</label>
+                <input type="text" id="website" name="website" class="form-input" value="techproit.solutions" readonly style="background-color: var(--surface-2); color: var(--text-muted);" />
+              </div>
+
+              <div class="form-group">
+                <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-primary);">Your Name *</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-primary);">What email address do you use to access the above website / app? *</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required />
+              </div>
+
+              <div class="form-group">
+                <label for="requester_type" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-primary);">You are submitting this request as *</label>
+                <select id="requester_type" name="requester_type" class="form-input" required style="cursor: pointer;">
+                  <option value="">Select...</option>
+                  <option value="data_subject">The person, or the parent / guardian of the person, whose name appears above.</option>
+                  <option value="authorized_agent">An agent authorized by the consumer to make this request on their behalf.</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="privacy_law" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-primary);">Under the rights of which law are you making this request? *</label>
+                <select id="privacy_law" name="privacy_law" class="form-input" required style="cursor: pointer;">
+                  <option value="">Select...</option>
+                  <option value="GDPR">GDPR (General Data Protection Regulation)</option>
+                  <option value="CCPA">CCPA (California Consumer Privacy Act)</option>
+                  <option value="CPA">CPA (Colorado Privacy Act)</option>
+                  <option value="CTDPA">CTDPA (Connecticut Data Privacy Act)</option>
+                  <option value="UCPA">UCPA (Utah Consumer Privacy Act)</option>
+                  <option value="VCDPA">VCDPA (Virginia Consumer Data Protection Act)</option>
+                  <option value="OTHER">OTHER</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="request_details" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-primary);">Please leave details regarding your action request or question.</label>
+                <textarea id="request_details" name="request_details" class="form-input form-textarea" placeholder="Please describe your request in detail. For example: 'I would like to access all personal data you have about me' or 'I would like to delete my personal data' or 'I would like to correct inaccurate information about me'" style="min-height: 120px;"></textarea>
+              </div>
+
+              <div class="form-group">
+                <div style="margin-bottom: 1rem;">
+                  <label style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-primary);">I confirm that *</label>
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                  <label style="display: flex; align-items: flex-start; cursor: pointer; font-size: 0.95rem; line-height: 1.5;">
+                    <input type="checkbox" name="confirm_perjury" required style="margin-right: 0.75rem; margin-top: 0.25rem; min-width: 16px;" />
+                    <span style="color: var(--text-secondary);">Under penalty of perjury, I declare all the above information to be true and accurate.</span>
+                  </label>
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                  <label style="display: flex; align-items: flex-start; cursor: pointer; font-size: 0.95rem; line-height: 1.5;">
+                    <input type="checkbox" name="confirm_deletion" required style="margin-right: 0.75rem; margin-top: 0.25rem; min-width: 16px;" />
+                    <span style="color: var(--text-secondary);">I understand that the deletion or restriction of my personal data is irreversible and may result in the termination of services with TechPro Solutions.</span>
+                  </label>
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                  <label style="display: flex; align-items: flex-start; cursor: pointer; font-size: 0.95rem; line-height: 1.5;">
+                    <input type="checkbox" name="confirm_validation" required style="margin-right: 0.75rem; margin-top: 0.25rem; min-width: 16px;" />
+                    <span style="color: var(--text-secondary);">I understand that I will be required to validate my request by email, and I may be contacted in order to complete the request.</span>
+                  </label>
+                </div>
+              </div>
+
+              <button class="btn btn-primary" type="submit" style="width: 100%; margin-top: 1rem;">
+                <i data-feather="send" width="20" height="20"></i>
+                SUBMIT
+              </button>
+            </form>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--surface-2); border-radius: 12px; border-left: 4px solid var(--primary);">
+              <h4 style="color: var(--text-primary); font-weight: 600; margin-bottom: 1rem; font-size: 1.1rem;">Need Help?</h4>
+              <p style="margin-bottom: 1rem; color: var(--text-secondary); font-size: 0.95rem;">If you have questions about this form or your privacy rights, please contact our data protection team:</p>
+              <ul style="margin: 0.5rem 0; padding-left: 1.5rem; color: var(--text-secondary); font-size: 0.95rem;">
+                <li style="margin-bottom: 0.5rem;">Email: <strong>privacy@techproit.solutions</strong></li>
+                <li style="margin-bottom: 0.5rem;">Phone: <strong>(515) 612-6004</strong></li>
+                <li>View our <a href="privacy.html" style="color: var(--primary); text-decoration: none;">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 TechPro Solutions LLC — Your Trusted Technology Partner</p>
+      <p class="credits-line">
+        Icons by <a href="https://feathericons.com" target="_blank" rel="noopener">Feather</a> •
+        Animations by <a href="https://github.com/michalsnik/aos" target="_blank" rel="noopener">AOS</a>
+      </p>
+      <p style="margin-top: 1rem;">
+        <a href="privacy.html" style="color: inherit; text-decoration: none; opacity: 0.7; font-size: 0.9rem;">Privacy Policy</a> •
+        <a href="data-request.html" style="color: inherit; text-decoration: none; opacity: 0.7; font-size: 0.9rem;">Data Request</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- External JavaScript Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <!-- Modular JavaScript Files -->
+  <script src="assets/js/theme_navigation.js"></script>
+  <script src="assets/js/animations_effects.js"></script>
+  <script src="assets/js/form_handling.js"></script>
+  <script src="assets/js/main_init.js"></script>
+</body>
+</html>

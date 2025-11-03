@@ -323,6 +323,17 @@
   <div class="nav-container">
     <nav role="navigation" aria-label="Main navigation">
       <a href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <a href="index.html#services">
+          Solutions
+          <span class="dropdown-icon">▼</span>
+        </a>
+        <div class="dropdown-menu">
+          <a href="qbadvisor.html">QuickBooks ProAdvisor</a>
+          <a href="insights-hub.html">TechPro Insights Hub</a>
+        </div>
+      </div>
+      <a href="it-consulting.html">IT Consulting</a>
       <a href="#intro">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -337,6 +348,17 @@
       <button class="close-drawer" onclick="toggleMobileNav()" aria-label="Close menu">&times;</button>
       <nav role="navigation" aria-label="Mobile navigation">
         <a href="index.html">Home</a>
+        <div class="mobile-dropdown">
+          <div class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(event)">
+            <span>Solutions</span>
+            <span class="mobile-dropdown-icon">▼</span>
+          </div>
+          <div class="mobile-dropdown-menu">
+            <a href="qbadvisor.html">QuickBooks ProAdvisor</a>
+            <a href="insights-hub.html">TechPro Insights Hub</a>
+          </div>
+        </div>
+        <a href="it-consulting.html">IT Consulting</a>
         <a href="#intro">About</a>
         <a href="#contact">Contact</a>
       </nav>

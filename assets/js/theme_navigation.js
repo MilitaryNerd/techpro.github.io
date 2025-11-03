@@ -198,3 +198,20 @@ const debouncedScrollHandler = debounce(() => {
     ticking = true;
   }
 }, 10);
+
+// Toggle Mobile Dropdown Menu
+function toggleMobileDropdown(event) {
+  const toggle = event.currentTarget;
+  const menu = toggle.nextElementSibling;
+  const icon = toggle.querySelector('.mobile-dropdown-icon');
+
+  toggle.classList.toggle('active');
+  menu.classList.toggle('show');
+
+  // Animate icon
+  if (menu.classList.contains('show')) {
+    icon.style.transform = 'rotate(180deg)';
+  } else {
+    icon.style.transform = 'rotate(0deg)';
+  }
+}

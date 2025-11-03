@@ -138,9 +138,20 @@
 
   <div class="nav-container">
     <nav role="navigation" aria-label="Main navigation">
-      <a href="#services" aria-current="page">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <a href="index.html#services">
+          Solutions
+          <span class="dropdown-icon">▼</span>
+        </a>
+        <div class="dropdown-menu">
+          <a href="qbadvisor.html">QuickBooks ProAdvisor</a>
+          <a href="insights-hub.html">TechPro Insights Hub</a>
+        </div>
+      </div>
+      <a href="it-consulting.html" aria-current="page">IT Consulting</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </div>
 
@@ -152,9 +163,20 @@
     <div class="drawer" id="mobileDrawer" aria-hidden="true" role="dialog" aria-label="Mobile menu">
       <button class="close-drawer" onclick="toggleMobileNav()" aria-label="Close menu">&times;</button>
       <nav role="navigation" aria-label="Mobile navigation">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html">Home</a>
+        <div class="mobile-dropdown">
+          <div class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(event)">
+            <span>Solutions</span>
+            <span class="mobile-dropdown-icon">▼</span>
+          </div>
+          <div class="mobile-dropdown-menu">
+            <a href="qbadvisor.html">QuickBooks ProAdvisor</a>
+            <a href="insights-hub.html">TechPro Insights Hub</a>
+          </div>
+        </div>
+        <a href="it-consulting.html">IT Consulting</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
     </div>
   </div>

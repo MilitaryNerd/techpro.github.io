@@ -153,9 +153,28 @@
     /* Support tiers */
     .tiers-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: 1fr;
       gap: 2rem;
       margin: 3rem 0;
+    }
+
+    /* Medium screens: 2 on top, Elite centered below */
+    @media (min-width: 768px) and (max-width: 991px) {
+      .tiers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .tier-card:nth-child(3) {
+        grid-column: 1 / -1;
+        max-width: 50%;
+        margin: 0 auto;
+      }
+    }
+
+    /* Large screens: 3 side-by-side */
+    @media (min-width: 992px) {
+      .tiers-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     .tier-card {
@@ -329,12 +348,12 @@
           <span class="dropdown-icon">▼</span>
         </a>
         <div class="dropdown-menu">
-          <a href="qbadvisor.html">QuickBooks ProAdvisor</a>
-          <a href="insights-hub.html">TechPro Insights Hub</a>
+          <a href="qbadvisor.html">Financial Operations</a>
+          <a href="insights-hub.html">Business Intelligence</a>
+          <a href="it-consulting.html">Technology Services</a>
         </div>
       </div>
-      <a href="it-consulting.html">IT Consulting</a>
-      <a href="#intro">About</a>
+      <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
   </div>
@@ -354,12 +373,12 @@
             <span class="mobile-dropdown-icon">▼</span>
           </div>
           <div class="mobile-dropdown-menu">
-            <a href="qbadvisor.html">QuickBooks ProAdvisor</a>
-            <a href="insights-hub.html">TechPro Insights Hub</a>
-          </div>
+            <a href="qbadvisor.html">Financial Operations</a>
+            <a href="insights-hub.html">Business Intelligence</a>
+          <a href="it-consulting.html">Technology Services</a>
         </div>
-        <a href="it-consulting.html">IT Consulting</a>
-        <a href="#intro">About</a>
+      </div>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -379,31 +398,6 @@
         <p style="max-width: 700px; margin: 2rem auto;">
           Transform your business data into actionable insights with our comprehensive approach: from deep-dive health assessments to custom KPI dashboards and ongoing strategic support.
         </p>
-
-        <!-- Journey Overview -->
-        <div class="journey-flow" style="margin-top: 5rem;">
-          <div class="journey-step" data-aos="fade-up" data-aos-delay="100">
-            <div class="journey-icon">
-              <i data-feather="search" width="40" height="40"></i>
-            </div>
-            <h3>Discovery</h3>
-            <p>Business Health Assessment</p>
-          </div>
-          <div class="journey-step" data-aos="fade-up" data-aos-delay="200">
-            <div class="journey-icon">
-              <i data-feather="bar-chart-2" width="40" height="40"></i>
-            </div>
-            <h3>Intelligence</h3>
-            <p>TechPro Insights Hub</p>
-          </div>
-          <div class="journey-step" data-aos="fade-up" data-aos-delay="300">
-            <div class="journey-icon">
-              <i data-feather="users" width="40" height="40"></i>
-            </div>
-            <h3>Partnership</h3>
-            <p>Ongoing Support</p>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -610,6 +604,31 @@
             Join forward-thinking businesses that have replaced gut feelings with data-driven decisions
           </p>
 
+          <!-- Journey Overview -->
+          <div class="journey-flow" style="margin-top: 4rem; margin-bottom: 4rem;">
+            <div class="journey-step" data-aos="fade-up" data-aos-delay="100">
+              <div class="journey-icon">
+                <i data-feather="search" width="40" height="40"></i>
+              </div>
+              <h3>Discovery</h3>
+              <p>Business Health Assessment</p>
+            </div>
+            <div class="journey-step" data-aos="fade-up" data-aos-delay="200">
+              <div class="journey-icon">
+                <i data-feather="bar-chart-2" width="40" height="40"></i>
+              </div>
+              <h3>Intelligence</h3>
+              <p>TechPro Insights Hub</p>
+            </div>
+            <div class="journey-step" data-aos="fade-up" data-aos-delay="300">
+              <div class="journey-icon">
+                <i data-feather="users" width="40" height="40"></i>
+              </div>
+              <h3>Partnership</h3>
+              <p>Ongoing Support</p>
+            </div>
+          </div>
+
           <div style="max-width: 700px; margin: 3rem auto; text-align: left;">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
               <div data-aos="fade-right" data-aos-delay="100">
@@ -665,7 +684,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 TechPro Solutions LLC — Building Clear, Reliable Systems for Financial Visibility</p>
+      <p>&copy; 2025 TechPro Solutions LLC — A Veteran-Owned Business | Johnston, IA</p>
 
       <!-- Social Media Links -->
       <div style="display: flex; gap: 1.5rem; justify-content: center; margin: 1.5rem 0; flex-wrap: wrap;">

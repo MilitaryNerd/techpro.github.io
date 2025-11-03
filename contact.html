@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact TechPro Solutions - Schedule your free consultation for bookkeeping, financial visibility, and business intelligence services." />
+  <meta name="keywords" content="Contact TechPro Solutions, Schedule Consultation, QuickBooks Help, Business Intelligence" />
+  <meta name="author" content="TechPro Solutions" />
+  <meta property="og:title" content="Contact Us | TechPro Solutions" />
+  <meta property="og:description" content="Ready to gain clarity and control over your business finances? Get in touch with TechPro Solutions today." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://techproit.solutions/contact.html" />
+  <title>Contact Us | TechPro Solutions</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/img/favicon_io/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="/assets/img/favicon_io/site.webmanifest">
+
+  <!-- External CSS Libraries -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <!-- Modular CSS Files -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/navigation.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/hero_animations.css">
+</head>
+<body>
+
+  <div class="screen-reader-wrapper">
+    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to contact form</a>
+  </div>
+
+  <button class="theme-toggle" onclick="toggleTheme()">
+    <span class="theme-icon">🌙</span>
+    <span class="theme-text">Dark</span>
+  </button>
+
+  <div class="nav-container">
+    <nav role="navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <a href="index.html#services">
+          Solutions
+          <span class="dropdown-icon">▼</span>
+        </a>
+        <div class="dropdown-menu">
+          <a href="qbadvisor.html">QuickBooks ProAdvisor</a>
+          <a href="insights-hub.html">TechPro Insights Hub</a>
+        </div>
+      </div>
+      <a href="it-consulting.html">IT Consulting</a>
+      <a href="index.html#about">About</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav">
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">
+      &#9776;
+    </button>
+    <div class="drawer" id="mobileDrawer" aria-hidden="true" role="dialog" aria-label="Mobile menu">
+      <button class="close-drawer" onclick="toggleMobileNav()" aria-label="Close menu">&times;</button>
+      <nav role="navigation" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <div class="mobile-dropdown">
+          <div class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(event)">
+            <span>Solutions</span>
+            <span class="mobile-dropdown-icon">▼</span>
+          </div>
+          <div class="mobile-dropdown-menu">
+            <a href="qbadvisor.html">QuickBooks ProAdvisor</a>
+            <a href="insights-hub.html">TechPro Insights Hub</a>
+          </div>
+        </div>
+        <a href="it-consulting.html">IT Consulting</a>
+        <a href="index.html#about">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main-content" style="padding-top: 6rem;">
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-section" data-aos="fade-up">
+          <div class="section-header">
+            <h1 class="section-title">Let's Connect</h1>
+            <p class="section-subtitle">Ready to gain clarity and control over your business finances? Schedule your free consultation today.</p>
+          </div>
+
+          <form id="contactForm" class="contact-form" method="POST" action="https://api.web3forms.com/submit">
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" value="83146779-8e55-4ce5-889c-db7d950e4c21" />
+
+            <!-- Web3Forms Configuration -->
+            <input type="hidden" name="subject" value="New Contact Inquiry from TechPro Solutions" />
+            <input type="hidden" name="from_name" value="TechPro Solutions - Contact Page" />
+            <input type="hidden" name="redirect" value="https://techproit.solutions/thank_you.html" />
+
+            <!-- Bot honeypot field -->
+            <input type="checkbox" name="honeypot" style="display: none;" />
+
+            <div class="form-group">
+              <input type="text" name="name" class="form-input" placeholder="Your Name" required />
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" class="form-input" placeholder="Your Email" required />
+            </div>
+            <div class="form-group">
+              <input type="text" name="company" class="form-input" placeholder="Company Name (Optional)" />
+            </div>
+            <div class="form-group">
+              <input type="tel" name="phone" class="form-input" placeholder="Phone Number (Optional)" />
+            </div>
+            <div class="form-group">
+              <select name="interest" class="form-input" style="cursor: pointer;">
+                <option value="">I'm interested in... (Optional)</option>
+                <option value="QuickBooks ProAdvisor Services">QuickBooks ProAdvisor Services</option>
+                <option value="Business Health Assessment">Business Health Assessment</option>
+                <option value="TechPro Insights Hub Dashboard">TechPro Insights Hub Dashboard</option>
+                <option value="Ongoing Support - Maintenance">Ongoing Support - Maintenance</option>
+                <option value="Ongoing Support - Mentorship">Ongoing Support - Mentorship</option>
+                <option value="Ongoing Support - Elite">Ongoing Support - Elite</option>
+                <option value="IT Consulting">IT Consulting Services</option>
+                <option value="General Inquiry">General Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea name="message" class="form-input form-textarea" placeholder="Tell us about your business and what you're looking to achieve..." required></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit" style="width: 100%;">
+              <i data-feather="send" width="20" height="20"></i>
+              Send Message
+            </button>
+          </form>
+
+          <div style="text-align: center; margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border-color);" data-aos="fade-up" data-aos-delay="200">
+            <h3 style="margin-bottom: 1rem;">Prefer to Call or Email?</h3>
+            <p style="opacity: 0.85;">We're here to help and typically respond within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 TechPro Solutions LLC — Visualize. Empower. Grow.</p>
+      <p class="credits-line">
+        Icons by <a href="https://feathericons.com" target="_blank" rel="noopener">Feather</a> •
+        Animations by <a href="https://github.com/michalsnik/aos" target="_blank" rel="noopener">AOS</a>
+      </p>
+      <p style="margin-top: 1rem;">
+        <a href="privacy.html" style="color: inherit; text-decoration: none; opacity: 0.7; font-size: 0.9rem;">Privacy Policy</a> •
+        <a href="data-request.html" style="color: inherit; text-decoration: none; opacity: 0.7; font-size: 0.9rem;">Data Request</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- External JavaScript Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <!-- Modular JavaScript Files -->
+  <script src="assets/js/theme_navigation.js"></script>
+  <script src="assets/js/animations_effects.js"></script>
+  <script src="assets/js/form_handling.js"></script>
+  <script src="assets/js/main_init.js"></script>
+</body>
+</html>

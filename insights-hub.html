@@ -392,10 +392,48 @@
 
   <main id="main-content">
     <!-- Section 1: Hero/Intro -->
-    <section class="hero-section" id="intro" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);" data-aos="fade-up" data-aos-duration="1000">
+    <section class="hero-section" id="intro" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%); position: relative; overflow: hidden;" data-aos="fade-up" data-aos-duration="1000">
+      <!-- Dashboard-themed background -->
+      <div style="position: absolute; inset: 0; opacity: 0.06; pointer-events: none;">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <!-- Grid lines -->
+          <defs>
+            <pattern id="dashboardGrid" width="80" height="80" patternUnits="userSpaceOnUse">
+              <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(99, 102, 241, 0.4)" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#dashboardGrid)"/>
+
+          <!-- Chart bars (left side) -->
+          <g transform="translate(100, 200)">
+            <rect x="0" y="100" width="30" height="150" fill="rgba(99, 102, 241, 0.3)" rx="4"/>
+            <rect x="50" y="50" width="30" height="200" fill="rgba(99, 102, 241, 0.4)" rx="4"/>
+            <rect x="100" y="80" width="30" height="170" fill="rgba(99, 102, 241, 0.35)" rx="4"/>
+            <rect x="150" y="30" width="30" height="220" fill="rgba(139, 92, 246, 0.4)" rx="4"/>
+          </g>
+
+          <!-- Line chart (right side) -->
+          <g transform="translate(calc(100% - 400), 300)">
+            <polyline points="0,100 60,80 120,90 180,50 240,60 300,30" fill="none" stroke="rgba(139, 92, 246, 0.5)" stroke-width="3"/>
+            <circle cx="0" cy="100" r="5" fill="rgba(139, 92, 246, 0.6)"/>
+            <circle cx="60" cy="80" r="5" fill="rgba(139, 92, 246, 0.6)"/>
+            <circle cx="120" cy="90" r="5" fill="rgba(139, 92, 246, 0.6)"/>
+            <circle cx="180" cy="50" r="5" fill="rgba(139, 92, 246, 0.6)"/>
+            <circle cx="240" cy="60" r="5" fill="rgba(139, 92, 246, 0.6)"/>
+            <circle cx="300" cy="30" r="5" fill="rgba(139, 92, 246, 0.6)"/>
+          </g>
+
+          <!-- Pie chart segments (bottom) -->
+          <g transform="translate(200, calc(100% - 250))">
+            <circle cx="0" cy="0" r="80" fill="none" stroke="rgba(99, 102, 241, 0.3)" stroke-width="40" stroke-dasharray="150 350"/>
+            <circle cx="0" cy="0" r="80" fill="none" stroke="rgba(139, 92, 246, 0.3)" stroke-width="40" stroke-dasharray="100 400" transform="rotate(108)"/>
+            <circle cx="0" cy="0" r="80" fill="none" stroke="rgba(6, 182, 212, 0.3)" stroke-width="40" stroke-dasharray="200 300" transform="rotate(216)"/>
+          </g>
+        </svg>
+      </div>
       <div class="section-decoration top-left"></div>
       <div class="section-decoration bottom-right"></div>
-      <div class="hero-section-content" data-aos="fade-up">
+      <div class="hero-section-content" data-aos="fade-up" style="position: relative; z-index: 2;">
         <h1>TechPro Insights Hub</h1>
         <p class="tagline">Visualize. Empower. Grow.</p>
         <p style="font-size: clamp(1.1rem, 2.5vw, 1.5rem); max-width: 800px; margin: 2rem auto;">

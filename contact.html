@@ -90,14 +90,65 @@
   </div>
 
   <main id="main-content" style="padding-top: 6rem;">
+    <!-- Hero Header Section -->
+    <section style="position: relative; overflow: hidden; background: var(--gradient-primary); padding: 4rem 2rem; margin-bottom: 3rem;">
+      <!-- Grid background (matching hero style) -->
+      <div style="position: absolute; inset: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><pattern id=\"contactGrid\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\"><path d=\"M 10 0 L 0 0 0 10\" fill=\"none\" stroke=\"rgba(255,255,255,0.1)\" stroke-width=\"1\"/></pattern></defs><rect width=\"100\" height=\"100\" fill=\"url(%23contactGrid)\"/></svg>'); opacity: 0.3; pointer-events: none;"></div>
+
+      <!-- Communication themed floating elements -->
+      <div style="position: absolute; inset: 0; pointer-events: none; z-index: 1;">
+        <!-- Message bubble - top left -->
+        <div style="position: absolute; top: 15%; left: 10%; opacity: 0.15; animation: float 6s ease-in-out infinite -2s; color: white;">
+          <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+
+        <!-- Mail/Email - top right -->
+        <div style="position: absolute; top: 20%; right: 12%; opacity: 0.15; animation: float 6s ease-in-out infinite -4s; color: white;">
+          <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+
+        <!-- Phone - bottom left -->
+        <div style="position: absolute; bottom: 20%; left: 8%; opacity: 0.12; animation: float 6s ease-in-out infinite -1s; color: white;">
+          <svg width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+
+        <!-- Calendar - bottom right -->
+        <div style="position: absolute; bottom: 25%; right: 10%; opacity: 0.13; animation: float 6s ease-in-out infinite -3s; color: white;">
+          <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </div>
+
+        <!-- Send/Paper plane - middle left -->
+        <div style="position: absolute; top: 50%; left: 15%; opacity: 0.11; animation: float 6s ease-in-out infinite -5s; color: white;">
+          <svg width="95" height="95" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="container" style="position: relative; z-index: 2; text-align: center; color: white;">
+        <div data-aos="fade-up">
+          <h1 class="section-title" style="color: white; margin-bottom: 1rem;">Let's Connect</h1>
+          <p class="section-subtitle" style="color: white; opacity: 0.95; max-width: 700px; margin: 0 auto;">Ready to gain clarity and control over your business finances? Schedule your free consultation today.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="contact">
       <div class="container">
         <div class="contact-section" data-aos="fade-up">
-          <div class="section-header">
-            <h1 class="section-title">Let's Connect</h1>
-            <p class="section-subtitle">Ready to gain clarity and control over your business finances? Schedule your free consultation today.</p>
-          </div>
-
           <form id="contactForm" class="contact-form" method="POST" action="https://api.web3forms.com/submit">
             <!-- Web3Forms Access Key -->
             <input type="hidden" name="access_key" value="83146779-8e55-4ce5-889c-db7d950e4c21" />

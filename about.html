@@ -91,21 +91,62 @@
 
   <main id="main-content" style="padding-top: 6rem;">
     <!-- Hero Section -->
-    <section class="section" style="position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(99, 102, 241, 0.03) 0%, rgba(139, 92, 246, 0.03) 100%);">
-      <!-- Background Decorations -->
-      <div style="position: absolute; top: -10%; left: -5%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-      <div style="position: absolute; bottom: -10%; right: -5%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+    <section class="section" style="position: relative; overflow: hidden; background: var(--gradient-primary); min-height: 60vh; display: flex; align-items: center;">
+      <!-- Grid background (matching hero style) -->
+      <div style="position: absolute; inset: 0; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><defs><pattern id=\"aboutGrid\" width=\"10\" height=\"10\" patternUnits=\"userSpaceOnUse\"><path d=\"M 10 0 L 0 0 0 10\" fill=\"none\" stroke=\"rgba(255,255,255,0.1)\" stroke-width=\"1\"/></pattern></defs><rect width=\"100\" height=\"100\" fill=\"url(%23aboutGrid)\"/></svg>'); opacity: 0.3; pointer-events: none;"></div>
 
-      <div class="container" style="position: relative; z-index: 2;">
+      <!-- Company/People themed floating elements -->
+      <div style="position: absolute; inset: 0; pointer-events: none; z-index: 1;">
+        <!-- Shield (veteran-owned) - top left -->
+        <div style="position: absolute; top: 15%; left: 10%; opacity: 0.15; animation: float 6s ease-in-out infinite -2s; color: white;">
+          <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M12 8v4M12 16h.01"/>
+          </svg>
+        </div>
+
+        <!-- User/Profile icon - top right -->
+        <div style="position: absolute; top: 20%; right: 12%; opacity: 0.15; animation: float 6s ease-in-out infinite -4s; color: white;">
+          <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+
+        <!-- Handshake/Partnership - bottom left -->
+        <div style="position: absolute; bottom: 20%; left: 8%; opacity: 0.12; animation: float 6s ease-in-out infinite -1s; color: white;">
+          <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          </svg>
+        </div>
+
+        <!-- Award/Excellence - bottom right -->
+        <div style="position: absolute; bottom: 25%; right: 10%; opacity: 0.13; animation: float 6s ease-in-out infinite -3s; color: white;">
+          <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="8" r="7"/>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+          </svg>
+        </div>
+
+        <!-- Flag (USA/Johnston IA) - middle right -->
+        <div style="position: absolute; top: 45%; right: 8%; opacity: 0.11; animation: float 6s ease-in-out infinite -5s; color: white;">
+          <svg width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+            <line x1="4" y1="22" x2="4" y2="15"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="container" style="position: relative; z-index: 2; color: white;">
         <div class="section-header" data-aos="fade-up">
-          <h1 class="section-title">About TechPro Solutions</h1>
-          <p class="section-subtitle" style="font-size: 1.3rem; font-weight: 600;">A Veteran-Owned Business | Johnston, IA</p>
+          <h1 class="section-title" style="color: white;">About TechPro Solutions</h1>
+          <p class="section-subtitle" style="font-size: 1.3rem; font-weight: 600; color: white; opacity: 0.95;">A Veteran-Owned Business | Johnston, IA</p>
         </div>
 
         <!-- Veteran-Owned Badge -->
         <div style="text-align: center; margin: 2rem 0;" data-aos="fade-up" data-aos-delay="100">
-          <div style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1)); border: 2px solid var(--primary); border-radius: 12px;">
-            <p style="font-size: 1.1rem; font-weight: 600; margin: 0; color: var(--primary);">🇺🇸 Proudly Veteran-Owned</p>
+          <div style="display: inline-block; padding: 1rem 2rem; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 12px;">
+            <p style="font-size: 1.1rem; font-weight: 600; margin: 0; color: white;">🇺🇸 Proudly Veteran-Owned</p>
           </div>
         </div>
       </div>
